@@ -1,0 +1,223 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+@use "styles/mixins/breakpoints";
+
+.container {
+  max-width: v.$page-container-width-1250;
+  padding: 0px;
+  margin-top: 49px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  min-height: 495px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: v.$white;
+  border-radius: v.$border-radius-10;
+  padding: 10px;
+
+  @include breakpoints.xl {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  &__slider {
+    flex: 0 0 45.546218487%;
+    max-width: 100%;
+
+    @include breakpoints.xl {
+      flex: 0 0 45.546218487%;
+      max-width: 45.546218487%;
+      padding: 13px;
+    }
+  }
+
+  &__info {
+    flex: 0 0 54.453781513%;
+    padding: 0px 12px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  &__description {
+    flex: 1 1 auto;
+  }
+}
+
+.indicators {
+  @include typography.fluid-type(
+    v.$min_width,
+    v.$max_width,
+    v.$font-size-14,
+    v.$font-size-24
+  );
+  padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
+  justify-content: space-between;
+  color: v.$black;
+
+  @include breakpoints.lg {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include breakpoints.lg {
+      gap: 11px;
+    }
+  }
+
+  & .icon {
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoints.lg {
+      width: 32px;
+    }
+  }
+
+  & .icon-views {
+    width: 32px;
+    height: 32px;
+  }
+
+  & .icon-fav {
+    width: 26px;
+    height: 26px;
+    stroke: none;
+    fill: v.$dark-yellow;
+  }
+
+  & .icon-reaction {
+    width: 18px;
+    height: 16px;
+  }
+}
+
+.description {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: v.$black;
+
+  &__title {
+    margin-bottom: 15px;
+    @include typography.fluid-type(
+      v.$min_width,
+      v.$max_width,
+      v.$font-size-16,
+      v.$font-size-28
+    );
+    font-weight: 500;
+
+    @include breakpoints.lg {
+      margin-bottom: 38px;
+    }
+  }
+  &__characteristics {
+    @include typography.fluid-type(
+      v.$min_width,
+      v.$max_width,
+      v.$font-size-14,
+      v.$font-size-20
+    );
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+
+    @include breakpoints.lg {
+      gap: 20px;
+    }
+  }
+  &__item {
+    display: flex;
+
+    div {
+      flex: 0 1 50%;
+    }
+  }
+}
+
+.information {
+  flex: 1 1 auto;
+  background-color: v.$white;
+  border-radius: v.$border-radius-10;
+  padding: 10px;
+
+  @include breakpoints.lg {
+    padding: 20px;
+  }
+}
+
+.price {
+  @include typography.fluid-type(
+    v.$min_width,
+    v.$max_width,
+    v.$font-size-16,
+    v.$font-size-30
+  );
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  line-height: 1;
+  &__icon {
+    width: 23px;
+    height: 22px;
+
+    @include breakpoints.lg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.like-btn {
+  svg {
+    fill: #52ff00;
+  }
+}
+
+.dislike-btn {
+  svg {
+    fill: #fa2626;
+  }
+}
+
+.like-btn,
+.dislike-btn {
+  color: v.$black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  @include typography.fluid-type(
+    v.$min_width,
+    v.$max_width,
+    v.$font-size-14,
+    v.$font-size-24
+  );
+
+  &.active {
+    svg {
+      fill: v.$secondary;
+    }
+  }
+}

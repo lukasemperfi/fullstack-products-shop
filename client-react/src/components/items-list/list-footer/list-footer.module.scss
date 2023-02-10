@@ -1,0 +1,9 @@
+@use "../../../styles/mixins/centered";
+
+.footerList {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px;
+
+  @include centered.flexCentered;
+}

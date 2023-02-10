@@ -1,0 +1,40 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.home {
+  display: flex;
+  flex-direction: column;
+
+  &__widgets {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+  }
+}
+
+.widgets {
+  &__views,
+  &__favorites,
+  &__likes {
+    flex: 1 1 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    @include breakpoints.rwd(450) {
+      flex: 0 1 48%;
+    }
+    @include breakpoints.md {
+      flex: 0 1 30.666666667%;
+    }
+  }
+}
+
+.chart {
+  &__users {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+}

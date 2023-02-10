@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "*"
+    ],
+    "ignore": [
+        ".git",
+        "node_modules"
+    ],
+    "events": {
+        "start": "npm run lint"
+    }
+}

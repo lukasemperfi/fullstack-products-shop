@@ -1,0 +1,12 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.container {
+  background-color: v.$white;
+  padding: 25px 45px;
+  color: black;
+  overflow: hidden;
+  word-break: break-all;
+  border-radius: v.$border-radius-15;
+}

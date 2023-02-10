@@ -1,0 +1,25 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.content {
+  background-color: v.$white;
+  padding: 10px 20px;
+  color: black;
+  overflow: hidden auto;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoints.rwd(578) {
+    padding: 25px 45px;
+    border-radius: v.$border-radius-15;
+    width: 577px;
+    max-height: 95vh;
+    height: fit-content;
+  }
+}
+
+.overlay {
+  background-color: v.$dark-gray;
+  opacity: 0.6;
+}

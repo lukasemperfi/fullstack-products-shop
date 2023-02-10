@@ -1,0 +1,101 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 30px;
+  background-color: v.$white;
+  z-index: 3;
+
+  @include breakpoints.lg {
+    padding: 20px 40px;
+  }
+
+  @include breakpoints.xl {
+    padding: 20px 50px 20px 86px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__title {
+    font-size: v.$font-size-20;
+    font-weight: 500;
+    color: v.$dark-gray;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  &__link {
+    color: v.$dark-gray;
+  }
+}
+
+.social-media {
+  flex-direction: row;
+  gap: 13px;
+  align-items: center;
+
+  &__facebook {
+    width: 19px;
+  }
+  &__instagram {
+    width: 33px;
+    height: 33px;
+  }
+  &__youtube {
+    width: 36px;
+    height: 25px;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  color: v.$dark-gray;
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    color: v.$dark-gray;
+    gap: 5px;
+  }
+
+  &__title {
+    font-size: v.$font-size-28;
+  }
+
+  &__title-sec {
+    font-size: v.$font-size-20;
+    margin-bottom: 5px;
+  }
+
+  &__logotype {
+    width: 66px;
+    height: 53px;
+  }
+}
+.copyright {
+  display: flex;
+  gap: 5px;
+  margin-left: 71px;
+  &__logo {
+    width: 20px;
+    height: 20px;
+  }
+  &__title {
+    font-size: v.$font-size-16;
+    font-weight: 500;
+    color: v.$dark-gray;
+  }
+}

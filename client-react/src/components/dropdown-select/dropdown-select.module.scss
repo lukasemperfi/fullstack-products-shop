@@ -1,0 +1,76 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.dropdown {
+  position: relative;
+  user-select: none;
+  border-radius: v.$border-radius-10;
+
+  &__btn,
+  &__item {
+    display: flex;
+    gap: 6px;
+    padding: 9px 15px;
+    background-color: v.$secondary;
+    color: v.$white;
+    font-size: v.$font-size-20;
+    border-radius: v.$border-radius-10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 15px 11px;
+    background-color: v.$white;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    color: v.$black;
+    border: 1px solid v.$black;
+    background-color: v.$white;
+
+    .dropdown__arrow-icon {
+      fill: v.$black;
+    }
+
+    &.active {
+      color: v.$white;
+      background-color: v.$secondary;
+      border: none;
+
+      .dropdown__arrow-icon {
+        fill: v.$white;
+      }
+    }
+  }
+
+  &__sort-icon,
+  &__arrow-icon {
+    display: flex;
+    align-items: center;
+  }
+  &__arrow-icon {
+    width: 14px;
+    height: 9px;
+    fill: v.$white;
+  }
+}

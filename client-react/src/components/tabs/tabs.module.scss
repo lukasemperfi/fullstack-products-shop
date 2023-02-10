@@ -1,0 +1,55 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+@use "styles/mixins/breakpoints";
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  color: v.$black;
+}
+
+.panel {
+  display: flex;
+  gap: 15px;
+  justify-content: space-evenly;
+  padding: 15px;
+  overflow-y: hidden;
+  overflow-y: auto;
+
+  &.active {
+    justify-content: flex-start;
+  }
+
+  &__tab {
+    color: v.$black;
+    padding: 15px 5px;
+    @include typography.fluid-type(
+      v.$min_width,
+      v.$max_width,
+      v.$font-size-16,
+      v.$font-size-24
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: v.$border-radius-10;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .active {
+    color: v.$white;
+    background-color: v.$secondary;
+  }
+}
+
+.content {
+  padding: 5px 9px;
+
+  @include breakpoints.lg {
+    padding: 5px 19px;
+  }
+}

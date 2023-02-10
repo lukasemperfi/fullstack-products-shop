@@ -1,0 +1,70 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+
+.characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__add-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__inputs {
+    display: flex;
+    gap: 16px;
+  }
+  &__label {
+    font-size: v.$font-size-14;
+    border-bottom: 1px solid;
+  }
+  &__button {
+    color: v.$secondary;
+    border-color: v.$secondary;
+    font-size: v.$font-size-14;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: v.$border-radius-7;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &__item {
+    flex: auto;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: v.$font-size-18;
+    font-weight: 500;
+  }
+
+  &__attribute {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px solid v.$secondary;
+    padding: 10px;
+  }
+
+  &__remove-button {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 6px;
+
+    button {
+      border-color: v.$red;
+      font-size: v.$font-size-14;
+      color: v.$red;
+    }
+  }
+}

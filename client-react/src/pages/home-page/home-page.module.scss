@@ -1,0 +1,51 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+@use "styles/mixins/breakpoints";
+
+.banners {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include breakpoints.md {
+    gap: 45px;
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include breakpoints.md {
+      flex-direction: row;
+      gap: 8%;
+    }
+  }
+
+  &__img {
+    border-radius: v.$border-radius-10;
+    object-fit: contain;
+  }
+}
+
+.row-2 {
+  &__col-1 {
+    flex: 0 1 33%;
+  }
+
+  &__col-2 {
+    flex: 0 1 67%;
+  }
+}
+
+.row-3 {
+  &__col-1,
+  &__col-2,
+  &__col-3 {
+    flex: 0 1 33%;
+  }
+}

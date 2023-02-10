@@ -1,0 +1,104 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 164%;
+  right: -18%;
+  box-shadow: 0px 0px 10px v.$black;
+  border-radius: 10px;
+  background-color: v.$white;
+
+  @include breakpoints.sm {
+    right: 0;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.profile-menu {
+  padding: 9px 0px 0px 0px;
+  min-width: 110px;
+
+  @include breakpoints.sm {
+    min-width: 200px;
+  }
+
+  &__triangle {
+    width: 55px;
+    height: 33px;
+    position: absolute;
+    top: -32px;
+    right: 4px;
+    box-shadow: 0 16px 10px -17px #000000;
+    clip: rect(auto, auto, auto, auto);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: v.$white;
+      transform: rotate(45deg);
+      top: 23px;
+      left: 23px;
+      box-shadow: -1px -1px 10px -2px #000000;
+    }
+  }
+
+  &__button {
+    background-color: v.$primary;
+    border-radius: 0px 0px 10px 10px;
+
+    button {
+      padding: 4px 8px 8px 8px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      color: v.$dark-gray;
+      @include typography.fluid-type(
+        v.$min_width,
+        v.$max_width,
+        v.$font-size-14,
+        v.$font-size-18
+      );
+      font-style: italic;
+      white-space: nowrap;
+
+      @include breakpoints.sm {
+        padding: 8px 17px 17px 17px;
+      }
+    }
+  }
+}
+
+.menu {
+  &__link {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 4px 8px;
+    @include typography.fluid-type(
+      v.$min_width,
+      v.$max_width,
+      v.$font-size-14,
+      v.$font-size-30
+    );
+    font-weight: 400;
+    color: v.$dark-gray;
+    white-space: nowrap;
+
+    @include breakpoints.sm {
+      padding: 8px 17px;
+    }
+  }
+
+  & .profile {
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,13 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+
+.rename-form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .save-button {
+    background-color: v.$secondary;
+  }
+}

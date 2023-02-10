@@ -1,0 +1,7 @@
+@use "../variables" as v;
+
+@mixin flexCentered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

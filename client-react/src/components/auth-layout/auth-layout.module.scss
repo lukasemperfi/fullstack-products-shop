@@ -1,0 +1,86 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: v.$white;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  padding: 20px;
+  gap: 10px;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__logo-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoints.md {
+      width: 100px;
+      height: 100px;
+    }
+    @include breakpoints.lg {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &__logo {
+    max-width: 100%;
+  }
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1;
+
+  &__main {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: v.$green;
+
+    @include typography.fluid-type(v.$min_width, v.$max_width, 20px, 50px);
+  }
+
+  &__second {
+    color: v.$green;
+
+    @include typography.fluid-type(v.$min_width, v.$max_width, 20px, 38px);
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: v.$primary;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  padding: 45px 0px 16px 0px;
+
+  &__outlet-wrapper {
+    width: 0;
+    display: flex;
+    flex: auto;
+    padding: 10px;
+    position: relative;
+
+    @include breakpoints.lg {
+      padding: 42px 20px 0px 20px;
+    }
+  }
+}

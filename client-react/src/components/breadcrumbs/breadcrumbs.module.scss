@@ -1,0 +1,39 @@
+@use "styles/variables" as v;
+
+.breadcrumbs {
+  margin-bottom: 24px;
+  padding: 5px 0px;
+  color: v.$secondary;
+  font-size: v.$font-size-20;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__last-crumb {
+    color: v.$dark-gray;
+  }
+
+  &__link {
+    color: v.$secondary;
+    font-size: v.$font-size-20;
+
+    &:hover {
+      text-decoration: underline;
+      color: v.$secondary;
+    }
+  }
+
+  &__icon {
+    width: 9px;
+    height: 15px;
+    margin: 0px 16.5px;
+  }
+
+
+}

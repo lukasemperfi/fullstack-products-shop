@@ -1,0 +1,14 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.description {
+  line-height: 1.5;
+  word-break: break-all;
+  @include typography.fluid-type(
+    v.$min_width,
+    v.$max_width,
+    v.$font-size-14,
+    v.$font-size-24
+  );
+}

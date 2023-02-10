@@ -1,0 +1,9 @@
+@use "../../styles/mixins/centered";
+
+.empty {
+  width: 100%;
+  height: auto;
+  font-size: 24px;
+  color: black;
+  @include centered.flexCentered;
+}

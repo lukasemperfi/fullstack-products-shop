@@ -1,0 +1,10 @@
+.attributes {
+  display: flex;
+  flex-direction: column;
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+}

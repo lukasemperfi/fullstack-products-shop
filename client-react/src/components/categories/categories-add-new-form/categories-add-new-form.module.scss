@@ -1,0 +1,18 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__name {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .button {
+    background-color: v.$secondary;
+  }
+}

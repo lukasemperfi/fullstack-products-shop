@@ -1,0 +1,112 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.burger-btn {
+  position: absolute;
+  right: -40px;
+  top: 62px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: v.$white;
+  border-start-start-radius: 0;
+  border-start-end-radius: 6px;
+  border-end-end-radius: 6px;
+  border-end-start-radius: 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+
+  @include breakpoints.sm {
+    top: 93px;
+  }
+
+  @include breakpoints.xl {
+    box-shadow: none;
+  }
+
+  &.open {
+    right: auto;
+    left: 0;
+    box-shadow: none;
+
+    @include breakpoints.sm {
+      left: 0;
+      right: auto;
+      top: 93px;
+    }
+
+    @include breakpoints.lg {
+      right: -40px;
+      left: auto;
+    }
+  }
+
+  svg {
+    fill: v.$secondary;
+  }
+}
+
+.sidebar {
+  overflow: inherit;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background: v.$white;
+  color: #fff;
+  padding: 0px 9px 9px 9px;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  width: 100vw;
+  height: 100vh;
+
+  @include breakpoints.xl {
+    padding: 0px 9px 9px 9px;
+    width: 84px;
+    transform: translateX(0%);
+  }
+
+  &.open {
+    transform: translateX(0%);
+    transition: all 0.5s;
+
+    @include breakpoints.lg {
+      width: 368px;
+    }
+  }
+
+  &__container {
+    padding-top: 110px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.2s;
+    }
+
+    @include breakpoints.sm {
+      padding-top: 150px;
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.5s;
+    }
+
+    @include breakpoints.lg {
+      padding-top: 190px;
+    }
+  }
+}
+
+.nav {
+  height: 100%;
+  width: 100%;
+}

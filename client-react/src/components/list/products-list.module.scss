@@ -1,0 +1,36 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.container {
+  padding: 0;
+  height: auto;
+}
+
+.list {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 35px;
+  width: 100%;
+}
+
+.list-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 34px;
+
+  @include breakpoints.rwd(1072) {
+    gap: 47px;
+  }
+
+  &__item {
+    flex: 1 1 auto;
+
+    @include breakpoints.rwd(1072) {
+      flex: 0 1 30%;
+    }
+  }
+}

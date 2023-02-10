@@ -1,0 +1,28 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-new {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+
+  &__button {
+    color: v.$secondary;
+    border-color: v.$secondary;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+
+  .back-button {
+    color: v.$secondary;
+  }
+}

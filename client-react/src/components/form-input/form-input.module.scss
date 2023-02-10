@@ -1,0 +1,31 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: v.$font-size-14;
+}
+
+.input {
+  height: 48px;
+  border: 1px solid v.$secondary;
+  border-radius: v.$border-radius-7;
+  padding: 15px;
+  &:focus {
+    box-shadow: 0px 0px 6px #766ed3;
+    transition: all 0.3s;
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: v.$black;
+  opacity: 0.5;
+}

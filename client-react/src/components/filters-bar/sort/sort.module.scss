@@ -1,0 +1,33 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.sort {
+  display: flex;
+  gap: 6px;
+  padding: 9px 15px;
+  background-color: v.$secondary;
+  color: v.$white;
+  font-size: v.$font-size-20;
+  border-radius: v.$border-radius-10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__sort-icon,
+  &__arrow-icon {
+    display: flex;
+    align-items: center;
+  }
+  &__arrow-icon {
+    width: 14px;
+    height: 9px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 15px 11px;
+  background-color: white;
+}

@@ -1,0 +1,75 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+
+.upload-images {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__label-title {
+    font-size: v.$font-size-14;
+    cursor: default;
+  }
+
+  &__hidden {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__label {
+    border: 1px solid v.$secondary;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: v.$border-radius-7;
+    font-size: v.$font-size-14;
+  }
+}
+.images {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+  }
+  &__image {
+    height: 151px;
+    width: 142px;
+
+    img {
+      transition: none;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__del-button {
+    color: v.$red;
+    border-color: v.$secondary;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    min-width: auto;
+  }
+}

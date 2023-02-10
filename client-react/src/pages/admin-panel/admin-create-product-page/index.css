@@ -1,0 +1,33 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color: black;
+    width: 100%;
+}
+
+tbody {
+    border-bottom: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+    padding: 2px 4px;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border-right: solid 1px black;
+    border-left: solid 1px black;
+    padding: 5px;
+}
+
+tfoot {
+    color: black;
+}
+
+tfoot th {
+    font-weight: normal;
+}

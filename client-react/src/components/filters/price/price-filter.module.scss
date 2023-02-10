@@ -1,0 +1,38 @@
+@use "styles/variables" as v;
+
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+}
+
+.input {
+  border: 1px solid v.$dark-gray;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: v.$font-size-20;
+  color: v.$dark-gray;
+  line-height: 1.4;
+  max-width: 144px;
+}
+
+.dash {
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: v.$dark-gray;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}

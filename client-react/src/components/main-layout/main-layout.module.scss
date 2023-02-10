@@ -1,0 +1,32 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: v.$primary;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  padding: v.$header-height-mobile 0px 16px 0px;
+
+  @include breakpoints.sm {
+    padding: v.$header-height 0px 16px 0px;
+  }
+
+  &__outlet-wrapper {
+    width: 0;
+    display: flex;
+    flex: auto;
+    padding: 10px;
+    position: relative;
+    padding: 42px 20px 0px 20px;
+
+    @include breakpoints.xl {
+      padding: 42px 20px 0px 104px;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+
+.container {
+  overflow-x: auto;
+  height: 100%;
+  .table__rename-button {
+    background-color: v.$secondary;
+    font-size: v.$font-size-14;
+  }
+
+  .table__delete-button {
+    background-color: v.$red;
+    font-size: v.$font-size-14;
+  }
+
+  .cellWrapper {
+    display: flex;
+    align-items: center;
+
+    .image {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+  }
+
+  .status {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.Approved {
+      color: green;
+      background-color: rgba(0, 128, 0, 0.151);
+    }
+    &.Pending {
+      color: goldenrod;
+      background-color: rgba(189, 189, 3, 0.103);
+    }
+  }
+}
+
+.table {
+  max-width: fit-content;
+  border: 1px solid rgba(224, 224, 224, 1);
+
+  &__row {
+    white-space: nowrap;
+  }
+
+  &__header,
+  &__cell {
+    font-size: v.$font-size-16;
+  }
+  &__name {
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__loader {
+    overflow: hidden;
+  }
+}
+
+.rename-form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .save-button {
+    background-color: v.$secondary;
+  }
+}
+
+.image {
+  &__container {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+
+  &__img {
+    border-radius: 50%;
+  }
+}
+
+.roles {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 150px;
+    gap: 15px;
+  }
+}

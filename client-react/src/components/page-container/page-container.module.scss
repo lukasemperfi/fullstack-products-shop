@@ -1,0 +1,15 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins/breakpoints";
+
+.container {
+  max-width: v.$page-container-width-1250;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoints.lg {
+    padding: 20px;
+  }
+}

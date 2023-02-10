@@ -1,0 +1,15 @@
+export enum RootReducers {
+  categories = "categories",
+  products = "products",
+  productsFiltersData = "productsFiltersData",
+  productsCategoriesSearchData = "productsCategoriesSearchData",
+  user = "user",
+  users = "users",
+  favorites = "favorites",
+  productDetails = "productDetails",
+  priceDynamic = "priceDynamic",
+  comments = "comments",
+  reaction = "reaction",
+  productStatistic = "productStatistic",
+  roles = "roles",
+}

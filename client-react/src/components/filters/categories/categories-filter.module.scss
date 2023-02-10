@@ -1,0 +1,45 @@
+@use "styles/variables" as v;
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow: auto;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+
+  font: inherit;
+  width: 30px;
+  height: 30px;
+  border: 1px solid v.$dark-gray;
+  border-radius: 3px;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  visibility: hidden;
+  transition: all 0.1s;
+  box-shadow: inset 1em 1em v.$secondary;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  visibility: visible;
+}
+

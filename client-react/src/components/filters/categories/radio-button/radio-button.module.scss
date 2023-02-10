@@ -1,0 +1,46 @@
+@use "styles/variables" as v;
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 11px;
+  font-size: v.$font-size-20;
+  color: v.$dark-gray;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+
+  font: inherit;
+  width: 25px;
+  height: 25px;
+  border: 1px solid v.$dark-gray;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s;
+  box-shadow: inset 1em 1em v.$secondary;
+  border-radius: 50%;
+  transition: all 0.05s;
+}
+
+input[type="radio"]:checked::before {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.05s;
+}

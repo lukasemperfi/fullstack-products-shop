@@ -1,0 +1,64 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__title {
+    font-size: v.$font-size-20;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  &__title {
+    font-weight: 400;
+    flex: 1 1 auto;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  &__image {
+    flex: 1 1 50%;
+
+    & img {
+      aspect-ratio: 0.75;
+    }
+  }
+
+  &__statistic {
+    flex: 1 1 50%;
+  }
+}
+
+.statistic {
+  &__container {
+    flex: 1 1 50%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__icon {
+    & svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__value {
+    font-size: v.$font-size-20;
+    font-weight: 500;
+  }
+}

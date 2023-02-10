@@ -1,0 +1,22 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: auto;
+  }
+
+  & svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}

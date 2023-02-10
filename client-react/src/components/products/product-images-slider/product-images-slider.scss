@@ -1,0 +1,59 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+@use "styles/mixins/typography";
+
+.product-images-slider {
+  margin-bottom: 23px;
+  width: 67%;
+
+  &__slide {
+    aspect-ratio: 0.85;
+  }
+
+}
+
+.thumbs-container {
+  position: relative;
+  padding: 0px 67px;
+  display: none;
+
+  @include breakpoints.md {
+    display: block;
+  }
+}
+
+.product-images-slider-thumbs {
+  height: 23%;
+  position: relative;
+
+  &__slide {
+    aspect-ratio: 0.85;
+    &.swiper-slide-thumb-active {
+      border: 1px solid v.$secondary;
+    }
+  }
+
+  &__img-container {
+    padding: 9px 7px;
+  }
+
+  &__button-prev,
+  &__button-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 55px;
+    height: 55px;
+  }
+  &__button-prev {
+    left: 0;
+    background: url("../../../assets/arrow-left.svg") 50% / 16px 27px no-repeat;
+  }
+
+  &__button-next {
+    right: 0;
+    background: url("../../../assets/arrow-right.svg") 50% / 16px 27px no-repeat;
+  }
+}

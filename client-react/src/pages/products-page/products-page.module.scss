@@ -1,0 +1,23 @@
+@use "styles/variables" as v;
+
+.page-container {
+  max-width: v.$page-container-width-955;
+  padding: 0px;
+}
+
+.filters-bar {
+  background-color: v.$white;
+  border-radius: v.$border-radius-10;
+  margin-bottom: 50px;
+  padding: 20px 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: black;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}

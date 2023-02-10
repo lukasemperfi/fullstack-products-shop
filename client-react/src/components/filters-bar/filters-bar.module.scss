@@ -1,0 +1,35 @@
+@use "styles/variables" as v;
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &__item {
+    padding: 9px 15px;
+    background-color: v.$secondary;
+    color: v.$white;
+    font-size: v.$font-size-20;
+    border-radius: v.$border-radius-10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.view-change {
+  background-color: transparent;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.item {
+  padding: 9px 15px;
+  background-color: v.$secondary;
+  color: v.$white;
+  font-size: v.$font-size-20;
+  border-radius: v.$border-radius-10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

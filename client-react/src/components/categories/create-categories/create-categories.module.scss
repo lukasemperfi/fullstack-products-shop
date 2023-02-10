@@ -1,0 +1,11 @@
+@use "styles/variables" as v;
+@use "styles/mixins/breakpoints";
+
+.container {
+  display: inline-flex;
+}
+
+.button {
+  color: v.$secondary;
+  border-color: v.$secondary;
+}

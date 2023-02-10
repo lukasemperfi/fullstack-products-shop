@@ -1,0 +1,160 @@
+@use "styles/variables" as v;
+@use "styles/mixins/typography";
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 10px;
+  background-color: v.$white;
+  border-radius: 0px 0px 10px 10px;
+
+  &__favorite,
+  &__image,
+  &__info,
+  &__statistic {
+    overflow-wrap: break-word;
+  }
+
+  &__favorite {
+    flex: 0 0 5%;
+    background-color: v.$secondary;
+    order: 1;
+  }
+  &__image {
+    flex: 0 0 29%;
+    background-color: v.$white;
+    order: 3;
+  }
+  &__description {
+    flex: 0 0 46%;
+    background-color: v.$white;
+    order: 2;
+  }
+  &__statistic {
+    flex: 0 0 20%;
+    background-color: v.$white;
+    order: 4;
+  }
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 0px;
+
+  &__button {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+  }
+
+  .active {
+    fill: v.$dark-yellow;
+    stroke: none;
+  }
+}
+
+.card-image {
+  &__container {
+    padding: 0px 0px 103% 0px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.description {
+  padding-left: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: v.$black;
+  padding: 15px 0px 22px 0px;
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: v.$font-size-28;
+    font-weight: 500;
+    @include typography.line-clamp(2);
+    padding: 0 25px;
+
+    a {
+      color: v.$black;
+    }
+  }
+  &__attributes {
+    margin-bottom: 25px;
+    font-size: v.$font-size-20;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1 1 auto;
+    display: none;
+  }
+  &__item {
+    flex: 1 1 30%;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  &__price {
+    font-size: v.$font-size-30;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    line-height: 1;
+  }
+}
+
+.statistic {
+  font-size: v.$font-size-24;
+  padding-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6%;
+  justify-content: center;
+  color: v.$black;
+  padding: 0px 26px 15px 26px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex: 0 1 47%;
+  }
+
+  & .icon {
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .icon-views {
+    width: 32px;
+    height: 32px;
+  }
+
+  & .icon-fav {
+    width: 26px;
+    height: 26px;
+    stroke: none;
+    fill: v.$dark-yellow;
+  }
+
+  & .icon-reaction {
+    width: 22px;
+    height: 20px;
+  }
+}
